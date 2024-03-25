@@ -24,8 +24,11 @@ done on the Bethe lattice with a large coordination number, while We will study 
 ### Nonequilibrium formalism
 For the nonequilibrium many-body formalism, starting at
 an initial time t<sub>min</sub>, the system is evolved forward in time to
-times of physical interest up to a maximal time tmax and then
-backwards again to the initial time tmin.
+times of physical interest up to a maximal time t<sub>max</sub> and then
+backwards again to the initial time t<sub>min</sub>.
+<br />
+![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/1bfb6f1f-be54-4c63-99e3-767738dd874a)
+
 
 ### Detectors
 Detectors surrounding the collision points are designed to detect and measure the properties of particles produced in the collisions. These detectors are complex instruments composed of various sub-detectors, each optimized for detecting different types of particles and measuring specific properties such as energy, momentum, and charge.
