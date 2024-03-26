@@ -28,6 +28,9 @@ times of physical interest up to a maximal time t<sub>max</sub> and then
 backwards again to the initial time t<sub>min</sub>.
 <br />
 ![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/1bfb6f1f-be54-4c63-99e3-767738dd874a)
+<br />
+Notice that the virtical path
+
 
 
 ### Detectors
