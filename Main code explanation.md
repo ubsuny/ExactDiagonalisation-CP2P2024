@@ -59,18 +59,58 @@ So, simply said, the imaginary part of this retarded green's function is the den
 ## PROGRAMMING AND METHODS
 
 
-### Algorithm and numerical implementation
+### Algorithm of self-consistency loop
 
 The nonequilibrium DMFT+CPA algorithm follows the
 self-consistency loop illustrated in figure.
 ![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/3ff89b77-c0cd-41df-b062-cfc7afc86fcf)
+```
+do while(.not. converged .and. (iter .le. iter_max)) !self-consistent loop
 
+
+    if(myid .eq. 0 .and. iter .gt. 1)then
+      call check_convergence(converged, g_ave, g_old, errr2, er_min)
+      write(*,*) 'iter =', iter, 'error=', errr2
+    end if
+    
+        g_old = g_ave
+    call MPI_BCAST(converged,1,MPI_LOGICAL,0,MPI_COMM_WORLD,ierr)
+    
+    call MPI_Barrier(MPI_COMM_WORLD, ierr)
+    call MPI_BCAST(delta_ii,N_c**2,MPI_DOUBLE_COMPLEX,0,MPI_COMM_WORLD,ierr)
+```
 The loop is started
 by setting the hybridization Δ(t, t') to an initial guess (we
 use an infinitesimal imaginary number) for the first calculation
 of the noninteracting Green’s function on the impurity
 in the equation below, which can be considered as the `seed` of the loop:
 ![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/7b5d6f8d-90fa-4f92-9424-5f038c07855b)
+<br />
+inside the while loop above, the first step is included and the below is the code 
+<br />
+```
+do i1 = idbegin, idend !impurity solver !1, N_d!
+        
+       V = disorder(i1)
+
+        temp = mjk - delta_ii - deltaij*V!&
+!             &0.5*(deltaij_i+deltaij_j)*V !this is inverse of g-script
+        
+        do j = 1, N_c !prepare to invert temp to get g-script
+            do k = 1, N_c
+                temp2(j,k) = temp(j,k)*w_i(j)*w_i(k) !temp2 will hold g-script (need to keep inverse around)
+            end do
+        end do
+        
+        ipiv = 0.0
+        info = 0
+        workarray = 0.0
+        call zgetrf(n_c, n_c, temp2, n_c, ipiv, info)
+        if(info .ne. 0) write(*,*) 'in get_inverse zgetrf returns ', info
+        call zgetri(n_c, temp2, n_c, ipiv, workarray, n_c, info)
+        
+        if(.true.)then
+```
 <br />
 And at the end of the process, for each subsequent
 iteration, the new hybridization is calculated from the average
@@ -79,7 +119,7 @@ Green’s function by the equation:
 ![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/8cc7a039-34fa-4c33-90ac-ff0c4bd7d749)
 
 
-### Particle Identification
+### 
 The code identifies particles based on their properties, such as probabilities of being certain particle types (e.g., kaons, pions), charges, and momenta. Particle identification is essential for isolating specific particle decays and studying their properties.
 
 ### Invariant Mass Reconstruction
