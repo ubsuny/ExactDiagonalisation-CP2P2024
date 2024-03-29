@@ -176,3 +176,19 @@ end subroutine check_convergence
 
 ### Results and plots
 
+#### Relaxation of the energy across the interaction quench
+As we shown above, we we turn on the system by switching the interaction U from U1 to U2. The first case we set U1 = 0.5 and U2 = 0.5; here is the results data and plot:
+![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/29790b9c-676f-479d-a8f6-024f5772663d)
+![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/67de02fb-0224-47c8-8390-f6897892d429)
+![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/3fab29de-39db-4b87-9cac-cbf0adbd1e9f)
+
+
+
+![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/9264700d-aa2e-405d-bf12-28b45aea9b33)
+the results are pretty reasonable since U1 = U2, meaning the interaction didn't changed and so did the energy of the system.
+<br />
+<br />
+And the second case, we set U1 = 0.0001 and U2 = 0.5:
+![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/d3256cb3-0a0a-41e8-9ee7-8dd978f4457e)
+The result shows that the relaxation of the energy, which is one of the most important property of the many-body.The relaxation of energy in a many-body system refers to the process by which the system transitions from an initial state to a final equilibrium state. And this code can perform this property really well!!
+
