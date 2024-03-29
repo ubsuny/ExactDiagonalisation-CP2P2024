@@ -62,11 +62,22 @@ So, simply said, the imaginary part of this retarded green's function is the den
 ### Algorithm and numerical implementation
 
 The nonequilibrium DMFT+CPA algorithm follows the
-self-consistency loop illustrated in Fig. 2. The loop is started
-by setting the hybridization (t , t  ) to an initial guess (we
+self-consistency loop illustrated in figure.
+![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/3ff89b77-c0cd-41df-b062-cfc7afc86fcf)
+
+The loop is started
+by setting the hybridization Δ(t, t') to an initial guess (we
 use an infinitesimal imaginary number) for the first calculation
 of the noninteracting Green’s function on the impurity
-in the equation below
+in the equation below, which can be considered as the `seed` of the loop:
+![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/7b5d6f8d-90fa-4f92-9424-5f038c07855b)
+<br />
+And at the end of the process, for each subsequent
+iteration, the new hybridization is calculated from the average
+Green’s function by the equation:
+<br />
+![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/8cc7a039-34fa-4c33-90ac-ff0c4bd7d749)
+
 
 ### Particle Identification
 The code identifies particles based on their properties, such as probabilities of being certain particle types (e.g., kaons, pions), charges, and momenta. Particle identification is essential for isolating specific particle decays and studying their properties.
