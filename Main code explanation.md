@@ -21,7 +21,10 @@ Hubbard model defined by
 
 The first term represents the kinetic energy, the second term
 the interaction U between electrons, V describes the random
-disorder potential, and μ is the chemical potential.
+disorder potential, and μ is the chemical potential.U is the Coulomb
+interaction at a doubly occupied site, and Vi is the local onsite disorder potential randomly distributed
+according to a probability distribution P(Vi ).We use a box distribution
+P(Vi ) = (1/2W)*<b>θ</b>(W − |Vi|). 
 <br />
 My analysis of the Anderson-Hubbard model will be
 done on the Bethe lattice with a large coordination number, while We will study this system at half-filling.
@@ -43,28 +46,27 @@ time tquench. The disorder strength W is held fixed.
 <br />
 To describe such system, the formalism can be formulated either explicitly
 in terms of the different Green’s functions.
+![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/9030b336-abb9-4e6e-a251-dab2733472de)
+
+![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/82b1377f-d71e-4521-87d0-218fc1f1cede)
+<br />
+So, simply said, the imaginary part of this retarded green's function is the density of states. and that's our main target of this project.
+<br />
+![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/e4183f44-62d9-4aaf-85c6-5ff7f7e32aeb)
 
 
-### Detectors
-Detectors surrounding the collision points are designed to detect and measure the properties of particles produced in the collisions. These detectors are complex instruments composed of various sub-detectors, each optimized for detecting different types of particles and measuring specific properties such as energy, momentum, and charge.
 
-## Event Reconstruction Process
-Event reconstruction is the process of identifying and analyzing particles produced in collider collisions based on the signals recorded by detectors. The event reconstruction process typically involves several steps:
+## PROGRAMMING AND METHODS
 
-1. **Signal Detection**: Detectors record signals produced by particles interacting with detector materials. These signals include energy deposits, ionization trails, and electromagnetic radiation emitted by particles.
 
-2. **Particle Identification**: Based on the recorded signals, detectors identify the types of particles produced in the collisions. Different types of particles leave distinct signatures in detectors, allowing for particle identification based on their properties such as energy loss, trajectory, and interaction patterns.
+### Algorithm and numerical implementation
 
-3. **Trajectory Reconstruction**: Detectors reconstruct the trajectories of particles based on the signals they produce as they pass through the detector layers. Trajectory reconstruction allows scientists to determine the paths particles took after the collision and infer information about their origins and interactions.
-
-4. **Energy Measurement**: Detectors measure the energy deposited by particles as they interact with detector materials. Energy measurements are crucial for determining the total energy of particles and identifying high-energy particles that may indicate the presence of new physics phenomena.
-
-5. **Interaction Analysis**: Scientists analyze the detected particles' interactions to study fundamental physics phenomena, such as particle decays, particle scattering, and the production of new particles. Analysis of particle interactions provides insights into the underlying physics principles governing particle behavior and interactions.
-
-## Present analysis
-The code performs event reconstruction and analysis of data recorded by detectors in collider experiments. It applies selection criteria to identify specific particle decays, reconstructs their invariant masses, and analyzes their properties to study fundamental physics phenomena such as CP Asymmetry.
-
-![Screenshot 2024-03-25 115940](https://github.com/ubsuny/MLppCollision_CP2P2024/assets/143828394/6e31efc0-accc-40da-ae21-985c86a70171)
+The nonequilibrium DMFT+CPA algorithm follows the
+self-consistency loop illustrated in Fig. 2. The loop is started
+by setting the hybridization (t , t  ) to an initial guess (we
+use an infinitesimal imaginary number) for the first calculation
+of the noninteracting Green’s function on the impurity
+in the equation below
 
 ### Particle Identification
 The code identifies particles based on their properties, such as probabilities of being certain particle types (e.g., kaons, pions), charges, and momenta. Particle identification is essential for isolating specific particle decays and studying their properties.
