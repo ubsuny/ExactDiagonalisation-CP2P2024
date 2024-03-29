@@ -38,11 +38,7 @@ backwards again to the initial time t<sub>min</sub>.
 <br />
 ![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/1bfb6f1f-be54-4c63-99e3-767738dd874a)
 <br />
-Notice that the virtical path is along the imaginary time -iβ, where temperature T = 1/β.
-<br />
-This is so called the Kadanoff-Baym-Keldysh contour; the interaction quench with the interaction
-being switched from U1 = 0 to a finite value U2 = U occurs at
-time tquench. The disorder strength W is held fixed.
+Notice that the virtical path is along the imaginary time -iβ, where temperature T = 1/β.This is so called the Kadanoff-Baym-Keldysh contour; the interaction quench with the interaction being switched from U1 = 0 to a finite value U2 = U occurs at time tquench. The disorder strength W is held fixed.
 <br />
 To describe such system, the formalism can be formulated either explicitly
 in terms of the different Green’s functions.
@@ -190,5 +186,10 @@ the results are pretty reasonable since U1 = U2, meaning the interaction didn't 
 <br />
 And the second case, we set U1 = 0.0001 and U2 = 0.5:
 ![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/d3256cb3-0a0a-41e8-9ee7-8dd978f4457e)
-The result shows that the relaxation of the energy, which is one of the most important property of the many-body.The relaxation of energy in a many-body system refers to the process by which the system transitions from an initial state to a final equilibrium state. And this code can perform this property really well!!
+The result shows that the relaxation of the energy, which is one of the most important property of the many-body quantum system.The relaxation of energy in a many-body system refers to the process by which the system transitions from an initial state to a final equilibrium state. And this code can perform this property really well!!
+
+#### Equilibrium density of states
+As I mentioned before, we want to calculate the density of states, which can be obtained from the retarded green's function; however, I'm still struggle with this part, I will update the contents in next two weeks!
+
+
 
