@@ -1,0 +1,7 @@
+In the directory,
+The file "main.f90" is the main code.
+The file "indat" is the input file.
+The file "Makefile" is the make file to compile and link.
+The file "analysis.f90" is to analyze the result of the main code.
+
+
