@@ -18,6 +18,11 @@ can be described in equilibrium by the single-band Anderson-
 Hubbard model defined by
 <br />
 ![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/dc190fcd-1480-4c03-b872-03789f924f9d)
+
+The first term represents the kinetic energy, the second term
+the interaction U between electrons, V describes the random
+disorder potential, and μ is the chemical potential.
+<br />
 My analysis of the Anderson-Hubbard model will be
 done on the Bethe lattice with a large coordination number, while We will study this system at half-filling.
 
