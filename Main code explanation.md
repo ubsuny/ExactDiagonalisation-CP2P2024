@@ -2,12 +2,10 @@
 
 ## INTRODUCTION
 I use a solution for the nonequilibrium dynamics of an interacting disordered system. The approach
-adapts the combination of the equilibrium dynamical mean-field theory and the equilibrium coherent potential
+is the combination of the equilibrium dynamical mean-field theory and the equilibrium coherent potential
 approximation methods to the nonequilibrium many-body formalism, using the Kadanoff-Baym-Keldysh complex
 time contour.We observe via the time dependence of the potential, kinetic, and total energies
-the effect of disorder on the relaxation of the system as a function of final interaction strength. The real-time
-approach has the potential to shed light on the fundamental role of disorder in the nonequilibrium dynamics of
-interacting quantum systems.
+the effect of disorder on the relaxation of the system as a function of final interaction strength. 
 
 ## MODEL AND METHODS
 
