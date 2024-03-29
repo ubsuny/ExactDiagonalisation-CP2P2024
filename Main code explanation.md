@@ -112,15 +112,67 @@ do i1 = idbegin, idend !impurity solver !1, N_d!
         if(.true.)then
 ```
 <br />
+
+### 
 And at the end of the process, for each subsequent
 iteration, the new hybridization is calculated from the average
 Green’s function by the equation: 
 <br />
 ![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/e523f87b-405b-437b-bc5c-944c8189b789)
+<br />
+and the code of this step is below:
+```
+    !collect all impurity GFs into the average GF
+    call MPI_Reduce(g_imp, g_ave, N_c*N_c, MPI_DOUBLE_COMPLEX, MPI_SUM, &
+      0, MPI_COMM_WORLD, ierr)
+      
+        
+        g_imp = 0
 
+    !the new hybridization is t^2 * g_ave
+    if(myid .eq. 0) delta_ii = t_hop**2 * g_ave
+       
+    iter = iter + 1
+end do !self-consistent loop end
+```
+And then, we check if the result is converged by the code:
+```
+subroutine check_convergence(converge, g_in, g_prev, errave, er_minimum)
 
-### 
-The code identifies particles based on their properties, such as probabilities of being certain particle types (e.g., kaons, pions), charges, and momenta. Particle identification is essential for isolating specific particle decays and studying their properties.
+   logical,intent(out) :: converge
+   complex(kind=wp), intent(in) :: g_in(1:N_c, 1:N_c), g_prev(1:N_c, 1:N_c)
+   real(kind=wp) :: errr, errrdenom
+   real(kind=wp), intent(in) :: er_minimum
+   real(kind=wp), intent(out) :: errave
+
+   ! integer :: k
+
+   errr = 0.0
+   errrdenom = 0.0
+                           
+
+   do i = 1, N_c
+      do j = 1, N_c
+   !    if((abs(sigma(k)) .ge. eps2) .and. (abs(sigma_old(k)) .ge. eps2))then                                                                            
+      errr = errr + abs((g_in(i,j)) - (g_prev(i,j)))
+      errrdenom = errrdenom + abs(g_in(i,j) + g_prev(i,j))
+   !    end if                                                                                                                                           
+      end do
+   end do
+
+   errr = 2.0*errr/errrdenom
+
+   errave = errr
+   
+!    write(*,*) 'averaged error =', errr, 'er_minimum =', er_minimum
+
+   if((errr - er_minimum) .le. 0.0)then
+      converge = .true.
+!      write(*,*) 'Converged'
+end if
+ 
+end subroutine check_convergence
+```
 
 ### Invariant Mass Reconstruction
 The code reconstructs the invariant masses of particles produced in specific decay channels using their measured momenta. Invariant mass reconstruction allows for precise determination of particle masses and the study of particle decay processes.
