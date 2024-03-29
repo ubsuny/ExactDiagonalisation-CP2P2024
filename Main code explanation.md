@@ -21,6 +21,7 @@ Hubbard model defined by
 My analysis of the Anderson-Hubbard model will be
 done on the Bethe lattice with a large coordination number, while We will study this system at half-filling.
 
+
 ### Nonequilibrium formalism
 For the nonequilibrium many-body formalism, starting at
 an initial time t<sub>min</sub>, the system is evolved forward in time to
@@ -30,7 +31,13 @@ backwards again to the initial time t<sub>min</sub>.
 ![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/1bfb6f1f-be54-4c63-99e3-767738dd874a)
 <br />
 Notice that the virtical path is along the imaginary time -iβ, where temperature T = 1/β.
-
+<br />
+This is so called the Kadanoff-Baym-Keldysh contour, with The interaction quench with the interaction
+being switched from U1 = 0 to a finite value U2 = U occurs at
+time tquench. The disorder strength W is held fixed.
+<br />
+To describe such system, the formalism can be formulated either explicitly
+in terms of the different Green’s functions.
 
 
 ### Detectors
