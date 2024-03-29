@@ -114,9 +114,9 @@ do i1 = idbegin, idend !impurity solver !1, N_d!
 <br />
 And at the end of the process, for each subsequent
 iteration, the new hybridization is calculated from the average
-Green’s function by the equation:
+Green’s function by the equation: 
 <br />
-![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/8cc7a039-34fa-4c33-90ac-ff0c4bd7d749)
+![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/e523f87b-405b-437b-bc5c-944c8189b789)
 
 
 ### 
