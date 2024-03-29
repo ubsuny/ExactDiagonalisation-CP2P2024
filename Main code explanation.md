@@ -174,19 +174,5 @@ end if
 end subroutine check_convergence
 ```
 
-### Invariant Mass Reconstruction
-The code reconstructs the invariant masses of particles produced in specific decay channels using their measured momenta. Invariant mass reconstruction allows for precise determination of particle masses and the study of particle decay processes.
+### Results and plots
 
-### Background Suppression
-The code applies selection criteria to suppress background contributions from events not corresponding to the decay channels of interest. Background suppression techniques enhance the signal-to-background ratio, improving the sensitivity and accuracy of the analysis.
-
-## Results
-On loading and running the C++ macro on ROOT software, the following output is generated:
-
-![Screenshot 2024-03-25 115722](https://github.com/ubsuny/MLppCollision_CP2P2024/assets/143828394/fa7d0b15-e9cd-4771-b30b-305ad16b4b75)
-
-
-![Screenshot 2024-03-25 120256](https://github.com/ubsuny/MLppCollision_CP2P2024/assets/143828394/3cbd237b-506d-4479-9a5a-1e24f1304672)
-
-The results successfully reproduce the mass of charged B-mesons i.e 5.279 GeV and also indicate a difference in the number of B+ and B- mesons, the reason for this asymmetry is still not fully understood but is a well-observed phenomenon.
-Measured CP Asymmetry is -0.0359549 with an uncertainty of 0.00751989.
