@@ -32,7 +32,7 @@ backwards again to the initial time t<sub>min</sub>.
 <br />
 Notice that the virtical path is along the imaginary time -iβ, where temperature T = 1/β.
 <br />
-This is so called the Kadanoff-Baym-Keldysh contour, with The interaction quench with the interaction
+This is so called the Kadanoff-Baym-Keldysh contour; the interaction quench with the interaction
 being switched from U1 = 0 to a finite value U2 = U occurs at
 time tquench. The disorder strength W is held fixed.
 <br />
