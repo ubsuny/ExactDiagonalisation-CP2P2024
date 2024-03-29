@@ -29,7 +29,7 @@ backwards again to the initial time t<sub>min</sub>.
 <br />
 ![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/1bfb6f1f-be54-4c63-99e3-767738dd874a)
 <br />
-Notice that the virtical path
+Notice that the virtical path is along the imaginary time -iβ, where temperature T = 1/β.
 
 
 
