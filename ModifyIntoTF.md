@@ -3,7 +3,10 @@
 ## INTRODUCTION
 My main code is writen in fortron, so the output data are all `.dat` files.
 What I want to do is modify these `.dat` files into tensorflow format, which can be used and analysised in python!
-## MODEL AND METHODS
+## Origincal output.dat file
+Here's the contents of the output.dat file, which is the total energy of the many-body system.
+![image](https://github.com/ubsuny/ExactDiagonalisation-CP2P2024/assets/50903294/262d3ea1-af79-4d49-a553-6cd9f3e5b914)
+
 
 
 ### Model
